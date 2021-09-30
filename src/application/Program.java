@@ -48,6 +48,12 @@ public class Program {
 		newSeller.setDepartment(department);
 		sellerDao.insert(newSeller);
 		System.out.println("Inserted! New id = " + newSeller.getId());
+		
+		System.out.println("\n=== TEST 5: Seller Update ===");
+		Seller sellerToUpdate = sellerDao.findById(2);
+		sellerToUpdate.setBaseSalary(5756.0);
+		sellerDao.update(sellerToUpdate);
+		System.out.println("Updated! Seller " + sellerToUpdate.getId());
 	}
 
 }
